@@ -26,9 +26,9 @@ find you need more (or less) time than this to complete the challenges, and that
 Go through these exercises and learn about the HTTP protocol and the Request and Response
 flow between a client and a server.
 
-1. [Introduction to HTTP.](https://github.com/makersacademy/web-applications/blob/http_bites/01_intro_to_http.md)
-2. [Requests and Responses](https://github.com/makersacademy/web-applications/blob/http_bites/02_requests_and_responses.md)
-3. [Sending request with parameters](https://github.com/makersacademy/web-applications/blob/http_bites/03_request_parameters.md)
+1. [Introduction to HTTP.](https://github.com/makersacademy/web-applications/blob/main/http_bites/01_intro_to_http.md)
+2. [Requests and Responses](https://github.com/makersacademy/web-applications/blob/main/http_bites/02_requests_and_responses.md)
+3. [Sending request with parameters](https://github.com/makersacademy/web-applications/blob/main/http_bites/03_request_parameters.md)
 
 ## Phase Two: Sinatra
 
@@ -40,21 +40,21 @@ Challenges](https://github.com/makersacademy/golden-square/blob/main/pills/proce
 in which you record yourself performing the task and share it with your coach for
 feedback. These are tagged with a 📡.
 
-1. [Setting up a Sinatra project](https://github.com/makersacademy/web-applications/blob/challenges/01_setting_up_sinatra_project.md)
-2. [Building routes](https://github.com/makersacademy/web-applications/blob/challenges/02_building_a_route.md)
-3. [Test-driving routes](https://github.com/makersacademy/web-applications/blob/challenges/03_test_driving_a_route.md) 📡.
-4. [Creating a sequence diagram for a web application](https://github.com/makersacademy/web-applications/blob/challenges/04_creating_a_sequence_diagram.md)
-5. [Test-driving routes that interact with a database](https://github.com/makersacademy/web-applications/blob/challenges/05_test_driving_route_with_database.md) 📡.
+1. [Setting up a Sinatra project](https://github.com/makersacademy/web-applications/blob/main/challenges/01_setting_up_sinatra_project.md)
+2. [Building routes](https://github.com/makersacademy/web-applications/blob/main/challenges/02_building_a_route.md)
+3. [Test-driving routes](https://github.com/makersacademy/web-applications/blob/main/challenges/03_test_driving_a_route.md) 📡.
+4. [Creating a sequence diagram for a web application](https://github.com/makersacademy/web-applications/blob/main/challenges/04_creating_a_sequence_diagram.md)
+5. [Test-driving routes that interact with a database](https://github.com/makersacademy/web-applications/blob/main/challenges/05_test_driving_route_with_database.md) 📡.
 
 ## Phase Three: Building webpages
 
-1. [Using HTML to create webpages.](https://github.com/makersacademy/web-applications/blob/html_challenges/01_page_structure.md)
-2. [Using ERB to return dynamic HTML.](https://github.com/makersacademy/web-applications/blob/html_challenges/02_using_erb_dynamic_page.md)
-3. [Using links to send `GET` requests.](https://github.com/makersacademy/web-applications/blob/html_challenges/03_using_links.md) 📡
-4. [Using forms to send `POST` requests.](https://github.com/makersacademy/web-applications/blob/html_challenges/04_using_forms.md) 
-5. [Debugging a web application](https://github.com/makersacademy/web-applications/blob/html_challenges/05_debugging.md)
-6. [Securing your application](https://github.com/makersacademy/web-applications/blob/html_challenges/06_securing_user_input.md)
-6. [Deploying your web server (on Render)](https://github.com/makersacademy/web-applications/blob/html_challenges/07_deploying_render.md)
+1. [Using HTML to create webpages.](https://github.com/makersacademy/web-applications/blob/main/html_challenges/01_page_structure.md)
+2. [Using ERB to return dynamic HTML.](https://github.com/makersacademy/web-applications/blob/main/html_challenges/02_using_erb_dynamic_page.md)
+3. [Using links to send `GET` requests.](https://github.com/makersacademy/web-applications/blob/main/html_challenges/03_using_links.md) 📡
+4. [Using forms to send `POST` requests.](https://github.com/makersacademy/web-applications/blob/main/html_challenges/04_using_forms.md) 
+5. [Debugging a web application](https://github.com/makersacademy/web-applications/blob/main/html_challenges/05_debugging.md)
+6. [Securing your application](https://github.com/makersacademy/web-applications/blob/main/html_challenges/06_securing_user_input.md)
+6. [Deploying your web server (on Render)](https://github.com/makersacademy/web-applications/blob/main/html_challenges/07_deploying_render.md)
 
 ## Phase Four: Solo challenge
 
@@ -68,6 +68,6 @@ open a pull request when you're done.
 This is additional reference material so you can learn to use common features and patterns
 implemented as part of web applications.
 
-1. [Modelling and Planning a Web application](https://github.com/makersacademy/web-applications/blob/pills/modelling_and_planning_web_application.md)
-2. [Creating and Authenticating users](./pills/user_authentication.md)
-3. [Loading CSS or static files](https://github.com/makersacademy/web-applications/blob/pills/loading_css_or_static_files.md)
+1. [Modelling and Planning a Web application](https://github.com/makersacademy/web-applications/blob/main/pills/modelling_and_planning_web_application.md)
+2. [Creating and Authenticating users](https://github.com/makersacademy/web-applications/blob/main/pills/user_authentication.md)
+3. [Loading CSS or static files](https://github.com/makersacademy/web-applications/blob/main/pills/loading_css_or_static_files.md)
