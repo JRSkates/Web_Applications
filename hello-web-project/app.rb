@@ -14,13 +14,11 @@ class Application < Sinatra::Base
 
   get '/hello' do
     name = params[:name]
-
-    return "Hello #{name}"
+    return "Hello, #{name}"
   end
 
   get '/posts' do
     name = params[:name]
-    p name
     return "A list of #{name}'s posts:"
   end
   # http://localhost:9292/posts?name=Jack
@@ -28,7 +26,6 @@ class Application < Sinatra::Base
 
   post '/posts' do
     title = params[:title]
-    p title
     return "Post was created with title: '#{title}'"
   end
 
@@ -37,5 +34,15 @@ class Application < Sinatra::Base
     message = params[:message]
 
     return "Thanks #{name}, you sent this message: #{message}"
+  end
+
+  get '/names' do
+    return "Julia, Mary, Karim"
+  end
+
+  post '/sort-names' do
+    names = params[:names]
+    final = names.split(',').sort.join(',')
+    return final
   end
 end
