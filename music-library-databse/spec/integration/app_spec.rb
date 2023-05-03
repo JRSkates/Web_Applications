@@ -43,6 +43,26 @@ describe Application do
     end
   end
 
+  context 'GET /albums/:id' do
+    it 'should return 200 and the album with the given id' do
+      response = get('/albums/1')
+      expected = 'Bossanova'
+
+      expect(response.status).to eq(200)
+      expect(response.body).to eq expected
+    end
+  end
+
+  context 'GET /aritsts/:id' do
+    it 'should return 200 and the artist with the given id' do
+      response = get('/artists/1')
+      expected = 'Pixies'
+
+      expect(response.status).to eq(200)
+      expect(response.body).to eq expected
+    end
+  end
+
   context 'GET /artists' do
     it 'should return 200 and a list of artists' do
       response = get('/artists')
