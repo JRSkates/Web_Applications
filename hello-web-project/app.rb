@@ -9,7 +9,7 @@ class Application < Sinatra::Base
   end
 
   get '/' do
-    "Hello, world!"
+    return erb(:index)
   end
 
   get '/hello' do
