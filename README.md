@@ -1,8 +1,5 @@
 # Web applications
 
-_Coaching this? Read the coach guidance
-[here.](https://github.com/makersacademy/slug/blob/main/materials/universe/distributed_applications/web_applications/HOW_TO_COACH.x.md)_
-
 In this module you will learn to:
   * Explain how HTTP requests and responses work at a high level
   * Write integration tests for a web application
