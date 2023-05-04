@@ -16,41 +16,46 @@ class Application < Sinatra::Base
   end
 
   get '/' do
-    return 'Hello, World!'
+    return erb(:home)
   end
 
   get '/albums' do
     repo = AlbumRepository.new
-    albums = repo.all
+    @albums = repo.all
 
-    response = albums.map do |album|
-      album.title
-    end.join(", ")
-
-    return response
-  end
-
-  get '/albums/:id' do
-    repo = AlbumRepository.new
-    album_id = params[:id]
-    album = repo.find(album_id)
-    return album.title
+    return erb(:albums)
   end
 
   get '/artists' do
     repo = ArtistRepository.new
-    artists = repo.all
+    @artists = repo.all
 
-    response = artists.map do |artist|
-      artist.name
-    end.join(", ")
+    return erb(:artists)
+  end
+
+  get '/albums/:id' do
+    alb_repo = AlbumRepository.new
+    art_repo = ArtistRepository.new
+    album_id = params[:id]
+
+    album = alb_repo.find(album_id)
+    artist_id = album.artist_id
+    artist = art_repo.find(artist_id)
+
+    @title = album.title
+    @release_year = album.release_year
+    @artist = artist.name
+
+    return erb(:album)
   end
 
   get '/artists/:id' do
     repo = ArtistRepository.new
     artist_id = params[:id]
     artist = repo.find(artist_id)
-    return artist.name
+    @name = artist.name
+    @genre = artist.genre
+    return erb(:artist)
   end
 
   post '/albums' do

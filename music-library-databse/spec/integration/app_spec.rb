@@ -29,47 +29,57 @@ describe Application do
       response = get('/')
 
       expect(response.status).to eq 200
-      expect(response.body).to eq 'Hello, World!'
+      expect(response.body).to include '<title>Skates Music Library Database</title>'
     end
   end
 
   context 'GET /albums' do
-    it 'should return 200 and a list of albums' do
+    it 'should return 200 and a list of albums HTML ERB' do
       response = get('/albums')
       expected = 'Bossanova, Surfer Rosa'
   
       expect(response.status).to eq(200)
-      expect(response.body).to eq expected
-    end
-  end
-
-  context 'GET /albums/:id' do
-    it 'should return 200 and the album with the given id' do
-      response = get('/albums/1')
-      expected = 'Bossanova'
-
-      expect(response.status).to eq(200)
-      expect(response.body).to eq expected
-    end
-  end
-
-  context 'GET /aritsts/:id' do
-    it 'should return 200 and the artist with the given id' do
-      response = get('/artists/1')
-      expected = 'Pixies'
-
-      expect(response.status).to eq(200)
-      expect(response.body).to eq expected
+      expect(response.body).to include '<h1>Albums</h1>'
+      expect(response.body).to include 'Title: Bossanova'
+      expect(response.body).to include 'Released: 1999'
+      expect(response.body).to include '<a href="/albums/1">'
+      expect(response.body).to include '<a href="/albums/2">' 
     end
   end
 
   context 'GET /artists' do
-    it 'should return 200 and a list of artists' do
+    it 'should return 200 and a list of artists HTML ERB' do
       response = get('/artists')
       expected = 'Pixies, ABBA'
 
       expect(response.status).to eq(200)
-      expect(response.body).to eq expected
+      expect(response.body).to include '<h1>Artists</h1>'
+      expect(response.body).to include 'Name: Pixies'
+      expect(response.body).to include 'Genre: Rock'
+    
+    end
+  end
+
+  context 'GET /albums/:id' do
+    it 'should return 200 and the album with the given id HTML ERB' do
+      response = get('/albums/1')
+      expected = 'Bossanova'
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include '<h1>Bossanova</h1>'
+      expect(response.body).to include 'Release year: 1999'
+      expect(response.body).to include 'Artist: Pixies'
+    end
+  end
+
+  context 'GET /aritsts/:id' do
+    it 'should return 200 and the artist with the given id HTML ERB' do
+      response = get('/artists/1')
+      expected = 'Pixies'
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include '<h1>Pixies</h1>'
+      expect(response.body).to include 'Genre: Rock'
     end
   end
 
