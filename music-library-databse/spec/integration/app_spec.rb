@@ -60,6 +60,29 @@ describe Application do
     end
   end
 
+  context 'GET /albums/new' do
+    it 'should return 200 and the html form to create a new album' do
+      response = get("/albums/new")
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include '<form method="POST" action="/albums">'
+      expect(response.body).to include '<input type="text" name="title" />'
+      expect(response.body).to include '<input type="text" name="release_year" />'
+      expect(response.body).to include '<input type="text" name="artist_id" />'
+    end
+  end
+
+  context 'GET /artists/new' do
+    it 'should return 200 and the html form to create a new album' do
+      response = get("/artists/new")
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include '<form method="POST" action="/artists">'
+      expect(response.body).to include '<input type="text" name="name" />'
+      expect(response.body).to include '<input type="text" name="genre" />'
+    end
+  end
+
   context 'GET /albums/:id' do
     it 'should return 200 and the album with the given id HTML ERB' do
       response = get('/albums/1')
@@ -83,8 +106,18 @@ describe Application do
     end
   end
 
+
   context "POST /albums" do
-    it 'returns 200 OK and our new album is listed with our GET request' do
+    it 'should validate album params' do
+      response = post(
+        '/albums',
+        invalid_album_title: 'Let it Be'
+      )
+      
+      expect(response.status).to eq 400
+    end
+
+    it 'returns 200 OK, create a new album and return confirmation' do
       response = post(
         '/albums',
         title: 'Let It Be',
@@ -93,6 +126,8 @@ describe Application do
       )
 
       expect(response.status).to eq(200)
+      expect(response.body).to include '<h1>Album Added: Let It Be</h1>'
+      expect(response.body).to include '<a href="/albums"> Back to Albums </a>'
 
       response = get('/albums')
 
@@ -102,6 +137,15 @@ describe Application do
   end
 
   context "POST /artists" do
+    it 'should validate the artist params' do
+      response = post(
+        '/artists',
+        invalid_name: 'The Beatles',
+        invalid_genre: 'Rock'
+      )
+
+      expect(response.status).to eq(400)
+    end
     it 'returns 200 OK and our new artist is listed withn our GET request' do
       response = post(
         '/artists',
@@ -110,7 +154,8 @@ describe Application do
       )
 
       expect(response.status).to eq(200)
-      expect(response.body).to eq('')
+      expect(response.body).to include '<h1>Artist Added: The Beatles</h1>'
+      expect(response.body).to include '<a href="/artists"> Back to Artists </a>'
 
       response = get('/artists')
 
